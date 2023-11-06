@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>challenge</name>
+    </assembly>
+    <members>
+        <member name="M:NETChallenge.Controllers.AccionController.Get">
+            <summary>
+            Endpoint que obtiene las Acciones del sistema
+            </summary>
+            <returns>Lista de Acciones</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.AccionController.Get(System.Int32)">
+            <summary>
+            Endpoint que obtiene una Acción del sistema por Id
+            </summary>
+            <param name="id">Id de la Acción</param>
+            <returns>Acción</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.AuditoriaController.Get">
+            <summary>
+            Endpoint que obtiene las Auditorias del sistema
+            </summary>
+            <returns>Lista de Auditorias</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.EstadoOrdenDeInversionController.Get">
+            <summary>
+            Endpoint que obtiene los Estados de las Ordenes de Inversión del sistema
+            </summary>
+            <returns>Lista de Acciones</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.EstadoOrdenDeInversionController.Get(System.Int32)">
+            <summary>
+            Endpoint que obtiene un Estado de Orden de Inversión del sistema
+            </summary>
+            <param name="id">Id del Estado</param>
+            <returns>Estado de Orden de Inversión</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.OrdenDeInversionController.Get(NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionFiltroDto)">
+            <summary>
+            Endpoint que obtiene las Ordenes de Inversión del sistema
+            </summary>
+            <returns>Lista de Ordenes de Inversión</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.OrdenDeInversionController.Get(System.Int32)">
+            <summary>
+            Endpoint que obtiene una Orden de Inversión del sistema por Id
+            </summary>
+            <param name="id">Id de la Orden de Inversión</param>
+            <returns>Orden de Inversión</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.OrdenDeInversionController.Post(NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPostRequest)">
+            <summary>
+            Endpoint que crea una Orden de Inversión
+            </summary>
+            <returns>Orden de Inversión</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.OrdenDeInversionController.Put(NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPutRequest)">
+            <summary>
+            Endpoint que modifica una Orden de Inversión
+            </summary>
+            <returns>Orden de Inversión</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.OrdenDeInversionController.Delete(System.Int32)">
+            <summary>
+            Endpoint que elimina una Orden de Inversión
+            </summary>
+        </member>
+        <member name="M:NETChallenge.Controllers.OrdenDeInversionTipoOperacionController.Get">
+            <summary>
+            Endpoint que obtiene los Tipos de Operación de las Ordenes de Inversión del sistema
+            </summary>
+            <returns>Lista de Tipos de Operación de las Ordenes de Inversión</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.TipoDeActivoController.Get">
+            <summary>
+            Endpoint que obtiene los Tipos de Activo del sistema
+            </summary>
+            <returns>Lista de Tipos de Activo</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.TipoOperacionAuditoriaController.Get">
+            <summary>
+            Endpoint que obtiene los Tipos de Operación de Auditoria del sistema
+            </summary>
+            <returns>Lista de Tipos de Operación de Auditoria</returns>
+        </member>
+        <member name="M:NETChallenge.Controllers.UsuarioController.Login(challenge.Dto.Usuario.UsuarioLoginDto)">
+            <summary>
+            Endpoint que autoriza al usuario ingresar al sistema
+            </summary>
+            <returns>Token para utilizar como autorizador del sistema</returns>
+        </member>
+        <member name="P:NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionFiltroDto.Activo">
+            <summary>
+            Filtro para obtener ordenes de inversiones activas
+            </summary>
+        </member>
+        <member name="P:NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPostRequest.CuentaId">
+            <summary>
+            Id de la Cuenta comitente
+            </summary>
+        </member>
+        <member name="P:NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPostRequest.TipoActivoId">
+            <summary>
+            Es el Id del Tipo de Activo. Puede consultar los Tipos en (api/TipoDeActivo/get/)
+            </summary>
+        </member>
+        <member name="P:NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPostRequest.Cantidad">
+            <summary>
+            Cantidad de la Orden
+            </summary>
+        </member>
+        <member name="P:NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPostRequest.Precio">
+            <summary>
+            Precio de la Orden
+            </summary>
+        </member>
+        <member name="P:NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPostRequest.OrdenDeInversionOperacionId">
+            <summary>
+            Es el Id de la Operación de la Orden. Puede consultar las Operaciones en (api/OrdenDeInversionTipoOperacion/get/)
+            </summary>
+        </member>
+        <member name="P:NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPostRequest.AccionId">
+            <summary>
+            Es el Id de la Acción. Solo aplica si el Tipo de Activo es del tip Acción. Puede consultar las Acciones en (api/Accion/get/)
+            </summary>
+        </member>
+        <member name="P:NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPutRequest.Id">
+            <summary>
+            Id de la Orden de Inversión a modificar Puede consultar los Estados en (api/OrdenDeInversion/get/)
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:NETChallenge.Dto.OrdenDeInversion.OrdenDeInversionPutRequest.EstadoId">
+            <summary>
+            Es el Id del estado a modificar. Puede consultar los Estados en (api/EstadoOrdenDeInversion/get/)
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:challenge.Dto.Usuario.UsuarioLoginDto.NombreUsuario">
+            <summary>
+            Nombre de usuario a iniciar sesión
+            </summary>
+        </member>
+        <member name="P:challenge.Dto.Usuario.UsuarioLoginDto.Contraseña">
+            <summary>
+            Contraseña del usuario a iniciar sesión
+            </summary>
+        </member>
+        <member name="T:challenge.Migrations.Creation">
+            <inheritdoc />
+        </member>
+        <member name="M:challenge.Migrations.Creation.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:challenge.Migrations.Creation.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:challenge.Migrations.Creation.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
